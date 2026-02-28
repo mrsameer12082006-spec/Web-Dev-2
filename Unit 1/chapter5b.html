@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event types</title>
+</head>
+
+<body>
+    <!-- In the previous session we have learned about eventlister and event object -->
+
+    <!-- in this session we are going to learn about type of events -->
+
+    <!-- JS has mainly 3 types of events -->
+    <!-- Mouse Events.
+        Keyboard Events.
+        Form Events.
+    -->
+
+    <!-- 1. Mouse Event -->
+    <!-- Mouse events are a type of browser event that occur when the user interacts with the mouse — clicking, hovering, moving, or pressing mouse buttons on elements in a webpage. -->
+    <!-- example = Click , mouseover -->
+
+    
+    <button id="one">Click</button><br>
+    <button id="ones" style="margin: 10px;">hovering</button>
+
+    <script>
+        let hii = document.getElementById("one");
+
+        let yes = document.getElementById("ones");
+
+        // example of click event
+
+        hii.addEventListener("click",()=>{
+            hii.style.backgroundColor = "pink"
+        })
+        
+
+        // example of mouseover and mouseout example
+        yes.addEventListener("mouseover",()=>{
+            yes.style.backgroundColor = "yellow"
+        })
+
+        yes.addEventListener("mouseout",()=>{
+            yes.style.backgroundColor = "aqua"
+        })
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event type</title>
+</head>
+<body>
+    <!-- 3.Form events are triggered by user interactions with HTML form elements like <input>, <textarea>, <select>, and <form> itself.-->
+    
+    <!-- The submit event occurs when a form is submitted — usually when the user clicks a submit button or presses Enter inside a form field.
+    It allows you to handle or prevent form submission using JavaScript, such as validating input before sending. -->
+
+    <h2> form submission</h2>
+    <form id="myform">
+        <input type="text" placeholder="Enter name">
+        <button type="submit">submit</button>
+
+    </form>
+
+    <script>
+        let my = document.getElementById("myform")
+
+        my.addEventListener("submit",function(event){
+            event.preventDefault();    //Prevents default behavior  of the form 
+            console.log("form submitted")              
+        })
+    </script>
+    
+</body> 
+</html>
