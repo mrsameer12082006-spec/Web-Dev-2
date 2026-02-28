@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listner</title>
+    <style>
+        #btn {
+            border-radius: 5px;
+            background-color: rgb(190, 134, 242);
+            width: 70px;
+            height: 35px;
+            margin: 20px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TODO -->
+    <!-- 1. How to apply Event Listner and What are those -->
+    <!-- 2. How to remove Event Listner -->
+
+    <!-- what is Event Listner -->
+    <!-- An event listener is a way to make a web page dynamic according to user actions.
+        Here, actions include clicks, key presses, mouse movements, form submissions, page load, etc. -->
+
+    <!-- Dynamic page means = content changes without reloading -->
+
+    <!-- Real-life example:  You press a switch → light turns on.
+                            same way: you click a button → JavaScript reacts-->
+
+    <!-- Now how to add event listener 
+    1. First declare a fucntion
+    2. Use syntax of the event listner -->
+
+
+    <button id="btn">Add</button>
+
+    <script>
+        const hero = document.getElementById('btn');
+
+        function add() {
+            alert(3 + 7);
+        }
+
+        hero.addEventListener("click", add);
+
+        hero.addEventListener("mouseover", () => {
+            hero.style.backgroundColor = "aqua";
+        });
+
+        hero.addEventListener("mouseout", () => {          // this ()=>{} thing is called an arrow function.
+            hero.style.backgroundColor = "";
+        });
+
+
+        // now we will see how to remove an event listner
+        hero.removeEventListener("click",add);  // this is used to remove event listener you cannot remove an arrow function for a function to be removed you must name it 
+    </script>
+
+</body>
+
+</html>

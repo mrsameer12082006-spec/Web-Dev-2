@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding and removing class using js and text using js  </title>
+</head>
+<body>
+    <!-- Todo -->
+     <!--1.Adding and removing class using js -->
+     <!--2.Adding and removing text using js -->
+
+    <p id="one">Hello I am Someone</p>
+    <h1 id="two">Heading</h1>
+    <h2 id="three" style="display: none;">Hello One is worst</h2>
+    <h2 id="four">Sam Altmen</h2>
+
+    <script>
+        // Adding and removing class using javascript
+        // Now we know how to select and add element usign js now we add and remove class using js
+        // We will do that using classList - its a js property that help you add and remove and toggle classs using js
+        //  Method       Purpose
+        // add()         Adds class
+        // remove()      Removes class
+        // toggle()      Adds/removes class = if the class is present it will remove it  and if not then it will add that.
+        // contaion      Checks class
+
+        let head = document.getElementById('two');
+        let header = document.getElementById('three');
+        let headers = document.getElementById('four');
+        head.classList.add("match")
+
+        head.classList.remove("match")
+        head.classList.toggle("jin")
+
+        // Adding text using javascript
+        // JS provide you three way to do that 
+        // .innerText = .innerText is a property in JavaScript that allows you to get or change only the visible text inside an HTML element.
+        // .innerHTML = innerHTML is a property that lets you get or set the HTML content (including tags and text) inside an element.Unlike .innerText, .innerHTML reads and writes HTML code, not just plain text.
+        // .textContent = .textContent is a property in JavaScript that lets you get or change the text inside an HTML element.
+
+        header.innerText= "Hello Everyone"    // text is not visible as i have applied style display none property in the h2 tag.
+        headers.innerHTML = "<i>welcome<i>"
+        header.textContent = "Yo yo"     // it has render the text in web page but the browser doesnot render it visiblably. 
+        console.log(header)   
+
+
+
+
+    </script>
+
+</body>
+</html>

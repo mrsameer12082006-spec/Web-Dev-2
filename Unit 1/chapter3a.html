@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically adding style and html element</title>
+</head>
+
+<body>
+    <!-- Todo  -->
+    <!-- 1. Dynamically adding style to html element  -->
+    <!-- 2. dynamically creating html element-->
+
+    <!--  in the previous lecture we have learned about dynamically selesting html element in this we will see how to dynamically we can add style and create element -->
+
+    <div id="box">
+        <h1 class="one">Hii , welcome</h1>
+        <p class="one">My name is Sameer</p>
+    </div>
+
+    <script>
+        // 1. .style is a property in JavaScript that allows you to change the inline CSS styles of an HTML element directly from your script.
+        // Use camelCase for multi-word CSS properties.  CamelCase means instead of hyphen(-) we uses first word of property small and then  without any gap make the second word large like (fontSize , backgroundColor)
+
+        let hero = document.querySelectorAll('.one')
+
+        hero[0].style.backgroundColor = "pink";
+        hero[0].style.fontSize = "18px";
+        hero[1].style.color = "aqua";
+
+        // this is the example of styling element using js
+
+        // 2. We will see how to dynamically create html element using js 
+        //  for dynamically adding html element we have 4 method 
+        // .createElement(); = it create the element but dont not add that to the DOM yet
+        // .appendChild(); = it basically append the element to the DOM or web page  at the last  position
+        // .removeElement(); = it add remove the element from the page 
+        // .prepend(); = it add the element at the top of the page
+
+        let sam = document.getElementById('box');
+
+        let p = document.createElement('p')
+        p.textContent="hello i am sameer";
+        sam.appendChild(p)              // Here sam is teh parent element of p.
+        // sam.prepend(p)
+        // p.remove()
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

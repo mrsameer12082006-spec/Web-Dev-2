@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting element using js</title>
+</head>
+<body>
+    <!-- Study about remaining selector for js  -->
+    <!--  nodelist v/s html collection  -->
+
+    <h1 class="hii" id="one"></h1>
+    <h2 class="hii" id="one"></h2>
+
+    <script>
+        // 4. querySelector
+        // Selects the first element that matches a CSS selector and more powerfull than getElementById.
+        // querySelector() is more powerful than getElementById() because it supports all CSS selectors, allows complex element selection, and works consistently for modern DOM manipulation.
+
+        let hero = document.querySelector('#one')
+        console.log(hero)
+
+        // 5.querySelectorAll
+        //Selects all elements that match a CSS selector Returns a NodeList (can be looped using forEach()).
+
+        let three = document.querySelectorAll('.hii')
+        console.log(three)
+
+        // Node list v/s  HTML collection
+        // 1. it return via querySelectorAll    1. it is return via getElementsByClassName , getElementByTagname
+        // 2. return element and text node      2. return only element node
+        // 3. supports forEach                  3. doesnot supports foreach
+        // 4. ususlly static                    4. always live
+
+
+
+    </script>
+</body>
+</html>

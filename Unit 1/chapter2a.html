@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting element using js</title>
+</head>
+
+<body>
+    <!-- with the help of DOM we have connected the js with html now how do we select html element using js -->
+
+    <!-- there are total of 5 ways to select html element using javascript and more specifically by its  id , class , tagname   -->
+
+    <!-- the 5 methods are 
+        getElementById()
+        getElementsByClassName()
+        getElementByTagname()
+        querySelector()
+        querySelectorAll()
+    -->
+
+    <h1 id="one">Hii my name is sameer</h1>
+
+    <h2 class="two">once again</h2>
+    <h3 class="two">welcome back </h3>
+    <p class="two"> again thank you</p>
+    <p class="two"> hello ji</p>
+    
+
+
+    <script>
+        // 1. getElementById
+        // It is used to select element by there id attribute and as element have only  1 id so we can select only one element using it.
+
+        let hero = document.getElementById('one')
+
+        // 2. getElementsByClassName
+        // it is used to select all the element that have the same class and return a HTML collection which is an array like but not an array.
+        // what is mean by array like but not an array
+        // it means we can use ceratain array method like index length  but not proper array fucntion like map, filter , foreach.
+
+        let person = document.getElementsByClassName('two')
+        console.log(person[1])    // indexed
+        console.log(person.length)  // length method
+        
+        // 3. getElementByTagname
+        // getElementsByTagName() selects all elements with a given tag name and returns a live HTMLCollection.
+        // Even if there is only one <h1>, it still returns a collection.
+        // new element are automatically added to the list with creation
+
+        let my = document.getElementsByTagName('p')
+        console.log(my.length)
+    
+    </script>
+</body>
+
+</html>

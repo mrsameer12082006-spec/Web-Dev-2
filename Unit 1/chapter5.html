@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+
+<body>
+    <!-- We Will discuss what is Event  Object -->
+
+    <!--1. what is event object -->
+    <!--2. How to add it -->
+
+
+
+    <!-- Answer 1 = Event object is the object that is passed by the browser as a parameter to the eventlister function and give us the detail about the event using some methods.
+                    It contains detailed information about the event such as:
+                    1.Type of event
+                    2.Target element
+                    3.Mouse position
+                    4.Keyboard key pressed
+                    5.Default behavior
+    -->
+
+
+    <!--  THESE ARE ALL THE PROPERTIES AND METHOD ALONG WITH ITS DESCRIPTION
+    
+        event.type   =  Type of event (click, keyup, submit)
+        event.target = Element that triggered the event
+        event.currentTarget = Element on which listener is attached
+        event.clientX = Mouse X position
+        event.clientY = Mouse Y position
+        event.key = Key pressed (keyboard events)
+        event.preventDefault() = Prevents default behavior         These last two are methods and in the next sessions we will see how to add them.
+        event.stopPropagation() = Stops event bubbling
+     -->
+
+
+
+
+
+
+    <!-- Answer 2 = How to add it  -->
+
+
+    <button id="btn">Add</button><br>
+
+    <button id="btn2">click</button>
+
+    <script>
+
+        const hero = document.getElementById('btn');
+
+        function add(event) {                                     // we  also write "event" as "e"
+            console.log("hiii")
+            console.log(event.target);
+            console.log(event.type);
+            console.log(event.currentTarget);
+            console.log(event.clientX); 
+
+        }
+
+        hero.addEventListener("click", add);
+
+        const white = document.getElementById("btn2")
+        
+        
+        white.addEventListener("keydown", (e) => {    // press any key on click button it will show you in the console function of .key
+            console.log(e.key);
+        });
+
+    </script>
+
+
+    <!-- A short summary
+
+
+     The event object is automatically passed by the browser to the event listener’s callback function.
+     It is the function’s choice to accept it as a parameter or ignore it.
+     If we accept it, we can use its properties and methods to get details about the event such as which element was clicked (event.target), the type of event (event.type), and many more 
+    
+     -->
+
+
+
+
+</body>
+
+</html>
