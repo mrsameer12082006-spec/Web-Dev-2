@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        #first {
+            width: 200px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        #Second {
+            width: 100px;
+            height: 200px;
+            background-color: blueviolet;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Event Propagation is simple means how event is travlled in DOM when an action happen (like click , mouseover  etc ), means in web page  -->
+    <!-- Suppose if we apply event lister to multiple elements as in the example It determines which elements respond first — parent or child — and in what order they respond. -->
+
+    <!-- event Propagation have three phases -->
+    <!-- 1. Capturing phase -->
+    <!--The event starts from the top of the DOM (document).It travels downwards toward the target element. -->
+    <!-- example from  parent  to  child  -->
+
+    <!-- 2. Target Phase -->
+    <!-- the element where the event actually happens (where you click) -->
+    <!-- here the target element is button(third)  -->
+
+    <!-- 3. bubbling Phase -->
+    <!-- here the event travel from the child to the parent. It travel upward from the target element -->
+     <!-- example here it travel from child to parent -->
+
+    <!-- Bubbling is the default behaviour of the event Propagation -->
+
+    <!-- . Capturing: document → html → body → div → button
+         . Target: button
+         . Bubbling: button → div → body → html → document -->
+
+
+
+    <div id="first">
+        <div id="Second">
+            <button id="third">Click</button>
+        </div>
+    </div>
+    <!-- if you add 
+     1. true in the add of the eventlister you can change your event Propagation to Capturing 
+     2. false in the add of the eventlister you can change your event Propagation to bubbling  -->
+
+    <script>
+        let one = document.getElementById("first")
+        let two = document.getElementById("Second")
+        let three = document.getElementById("third")
+
+        one.addEventListener("click", function (event) {
+            alert("parent")
+        },true)
+
+        two.addEventListener("click", function (event) {
+            alert("middle child")
+            // event.stopPropagation();           // if you add event.stopPropagation() the Propagation will stop from the further movement 
+        },true)
+
+
+        three.addEventListener("click", function (event) {
+            alert("child")
+        },true)
+
+
+
+    </script>
+
+</body>
+
+</html>
