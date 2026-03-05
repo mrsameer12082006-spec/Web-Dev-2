@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settimeout</title>
+</head>
+<body>
+    <!-- here we will learn about 
+     1. setTimeout
+     2. setinterval -->
+
+    <!-- setTimeout() is a JavaScript function that waits for a certain amount of time and then runs a task -->
+    <!-- its like telling js to wait for some times then do this  -->
+
+    <!-- but there is a catch 
+        like it does not run the code direclty after the dealy is over it have two condition that needed to be fulfilled before running the settime out the condition are 
+        1. the delay should be completed 
+        2. the callstack should be empty -->
+
+    <!-- you will better understand with code  -->
+
+    <script>
+
+        setTimeout(() => {
+            console.log("A")                   // According to many people A should print first as it have a delay of 0ms but when we write console.log(B) it occupy the callstack position and till callstack is not empty A will not print.
+        },0);
+
+        console.log("B")
+    </script>
+
+
+
+
+
+        
+
+    
+</body>
+</html>

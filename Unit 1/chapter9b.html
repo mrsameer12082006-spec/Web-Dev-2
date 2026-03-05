@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setinterval</title>
+</head>
+<body>
+    <!-- setinterval -->
+    <!-- setInterval runs a function again and again after a fixed time interval. -->
+    <!-- setInterval() is a built-in JavaScript function used to repeatedly execute a specified function or block of code at fixed time intervals (in milliseconds) -->
+
+    <script>
+        let timer = setInterval(() => {
+            console.log("this line will repeat")         // after every 3 second this console.log will run 
+        }, 3000);
+
+        setTimeout(() => {
+            clearInterval(timer);
+            console.log("this line will stop")         // clearInterval is used to stop set interval    after 10s ssetinterval will stop.
+        }, 10000);
+    </script>
+</body>
+</html>
