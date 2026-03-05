@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous V/S Asynchronous JavaScript</title>
+</head>
+<body>
+    <!-- in the previous session we had learned about Synchronous js  -->
+    
+    
+
+    <!-- Asynchronous JavaScript allows JavaScript to send time-consuming tasks (like timers, API requests, file operations) to the browser so that JavaScript can continue executing other code without waiting -->
+
+    <!-- Do you rember the previous example  -->
+     
+    <!-- here console.log(end) will not run until the loop is finishes so inorder to run all the code we will send this time consuming task to browser  --> 
+
+    <script>
+
+        //Asynchronicity means the ability of a program to start a task and continue doing other work without waiting for that task to finish.
+
+        // in simple words : Tasks can run independently without blocking the program.
+
+
+        console.log("Start");
+
+        // for (let i = 0; i < 100000; i++) { 
+        //     console.log(i)
+        // }
+
+        setTimeout(() => {
+            for (let i = 0; i < 100000; i++) {                     // now here first the start will run then end and this loop is goes to the browser to run
+            console.log(i)
+        }}, 2000);
+
+        console.log("End");
+    </script>
+
+    <!-- why do we need Asynchronous js   -->
+
+    <!-- JavaScript runs on a single thread.
+         Some operations take time:         
+         API requests 
+         Database queries 
+         File reading 
+         Timers 
+         Fetching data from servers
+         If JS waited for them synchronously, the entire webpage would freeze. -->
+
+    <!-- so Asynchronous JavaScript allows tasks like API calls, timers, and file operations to run without blocking the main thread, enabling other code to execute while waiting for result -->
+
+
+    <!-- how does Asynchronous js run  -->
+    
+    <!-- 1. js run the code or send the code to the callstack -->
+
+    <!-- 2. if the code contains setTimeout, Fetch , etc it is send to the web api where the code waits and we majorly give the timeing that how much it is going to wait -->
+
+    <!-- 3. in the mean time js execute the remaining code  -->
+
+    <!-- 4. now the time is over for the code which in on web it get transferred to callback queue -->
+
+    <!-- 5. now event loop will check if the call stack is empty then it will send the code from the callback queue to the callstack for execution -->
+
+    <!-- 6. now we will get the result  -->
+
+
+    <!-- how to apply Asynchronous js  -->
+
+    <!-- there are three main way to do this -->
+    <!-- 1. callback function -->
+    <!-- 2. Promises -->
+    <!-- 3. Async / Await -->
+
+
+    
+       
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous V/S Asynchronous JavaScript</title>
+</head>
+
+<body>
+    <!-- JavaScript is a Synchronous language which means the code run line by line , one statement at a time 
+         The next line does not execute until the previous one finishes. -->
+
+    <!-- example -->
+
+    <script>
+
+        console.log("first")
+        console.log("second")         // here execution will look like this first => second => third
+        console.log("third")
+        
+        console.log("Start");
+
+        for (let i = 0; i < 100000; i++) { 
+            console.log(i)
+        }
+
+        console.log("End");    // here it doesnot run until the loop is finishes
+
+    </script>
+
+    <!--Key Characteristics of Synchronous JavaScript
+         1.Executes line by line
+         2.Blocks the next task until the current one finishes -->
+
+    <!-- Why does js is Synchronous language? -->
+    <!-- it is because it is a single threaded language. 
+     A thread is like a worker that performs tasks in a program and js has only a single thread so it do only one task at a time  -->
+
+
+</body>
+
+</html>
