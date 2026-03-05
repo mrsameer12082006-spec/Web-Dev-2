@@ -53,11 +53,11 @@
 
     <!-- how does Asynchronous js run  -->
     
-    <!-- 1. js run the code or send the code to the callstack -->
+    <!-- 1. js execute the normal code or send the code to the callstack for execution -->
 
-    <!-- 2. if the code contains setTimeout, Fetch , etc it is send to the web api where the code waits and we majorly give the timeing that how much it is going to wait -->
+    <!-- 2. if the code contains async operations such as (Fetch,settimeout, setinterval etc) then  it is send to the web api where the code waits and we majorly give the timeing that how much it is going to wait -->
 
-    <!-- 3. in the mean time js execute the remaining code  -->
+    <!-- 3. in the mean time js execute the remaining code that doesnot have async operations -->
 
     <!-- 4. now the time is over for the code which in on web it get transferred to callback queue -->
 
