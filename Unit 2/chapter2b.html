@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promise Chaining</title>
 </head>
+
 <body>
-    
+    <!-- what is promise Chaining -->
+    <!-- promise Chaining means connecting mutlitple promises with together with .then() so  tasks run one after another. -->
+
+    <!-- work of
+     .then() = Runs when the promise resolves successfully. 
+     .catch() = Runs if any error occurs in the promise chain.
+     .finally() = Runs always, whether the promise succeeds or fails.-->
+
+    <!-- why should we use promise Chaining instead of callback function -->
+
+    <!-- Compared to callback hell, this code is:
+        ✅cleaner         ✅easier to read         ✅easier to debug         ✅better error handling -->
+
+    <script>
+        function boilWater() {
+            return new Promise((resolve) => {
+                console.log("Water added to pot");
+
+                setTimeout(() => {
+                    console.log("Water boiled");
+                    resolve();
+                }, 2000);
+
+            });
+        }
+
+        function addMaggie() {
+            return new Promise((resolve) => {
+                console.log("Adding maggie");
+
+                setTimeout(() => {
+                    console.log("Maggie added");
+                    resolve();
+                }, 2000);
+
+            });
+        }
+
+        function addMasala() {
+            return new Promise((resolve, reject) => {
+                console.log("Adding masala");
+
+                let masalaAvailable = false;
+
+                setTimeout(() => {
+                    if (masalaAvailable) {
+                        console.log("Masala added");
+                        resolve();
+                    } else {
+                        reject("Masala not available");
+                    }
+                }, 2000);
+
+            });
+        }
+
+        boilWater()
+            .then(() => {
+                return addMaggie();
+            })
+            .then(() => {
+                return addMasala();
+            })
+            .then(() => {
+                console.log("Serve and eat 🍜");
+            })
+            .catch(() => {
+                console.log("Something went wrong");                  // serve and eat will not run as promise is rejected in addmasala fucntion 
+            })
+            .finally(() => {
+                console.log("Cooking process finished");             // it will run regardless of error 
+            });
+
+
+
+    </script>
+
+
+
+    <!-- drawbacks of promise Chaining -->
+    <!-- reduced readability
+        difficulty in understanding the execution flow
+        complicated error handling
+        performance issues due to sequential execution
+        poor maintainability  -->
+
 </body>
+
 </html>
