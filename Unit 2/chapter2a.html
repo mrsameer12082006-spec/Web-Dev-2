@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+    <!-- what is Promise -->
+
+    <!-- A Promise in JavaScript is an object that represents the result of an asynchronous operation that may finish in the future. -->
+
+    <!-- in simple words =>  A Promise in JavaScript is used to handle the result of a task that will finish in the future -->
+
+    <!-- what are the states of Promises -->
+    <!--Pending 
+        The task is still running.
+
+        Fulfilled (Resolved)
+        The task completed successfully.
+
+        Rejected 
+        The task failed  -->
+
+    <script>
+        let promise = new Promise((resolve, reject) => {
+
+            // let success = true;
+            let success = false;
+            if (success) {
+                resolve("Task completed");
+            } else {
+                reject("Task failed");
+            }
+        });
+
+        promise.then(result=>console.log(result)).catch(error=>console.log(error))                 // .then is used to catch the result and .catch is used to handle the error or reject part they both receive the result form resolve and reject  part of the promise
+
+        // resolve and reject are two methods given by the Promise.
+        // resolve():  Call when the task is completed successfully
+        // reject(): Call when the task fails or doesn't complete
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

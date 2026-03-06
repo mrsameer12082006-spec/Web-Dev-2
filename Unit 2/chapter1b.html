@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallStack and Callback</title>
+</head>
+
+<body>
+    <!-- you have always seem that js does not wait for the asynchronous code to finish and always run the next code first -->
+    <!-- example -->
+
+    <script>
+
+
+        // setTimeout(() => {
+        //     console.log("i am first")
+        // }, 0);
+
+        // console.log("i didnot wait ")                 // here this code will run first and doesnot wait for js code to finish 
+
+
+    </script>
+
+    <!-- But if we want JavaScript to wait until the asynchronous code is finished, and then run the next line
+     thats why we will see the use of callback function -->
+
+    <!-- what is callback function -->
+    <!-- callback function is a function that is passed as an argument to another function and is executed later when the first function finishes. -->
+    <!-- or in simple words => A function that is called after another function finishes its task. -->
+
+    <script>
+        console.log("let start Cooking")
+        console.log("Start Cooking")
+
+        function hotwater(callback) {
+            console.log("water is added to pot ")
+            setTimeout(() => {
+                console.log("water is boiled")
+                callback()
+            }, 3000);
+        }
+
+        function addingmaggie(callback) {
+            console.log("adding maggie in the water")
+            setTimeout(() => {
+                console.log("maggie is added")
+                callback()
+            }, 3000);
+        }
+
+        function addingmasala(callback) {
+            console.log("adding masala in the maggie")
+            setTimeout(() => {
+                console.log("masala is added")
+                callback()
+            }, 3000);
+        }
+
+        function serve() {
+            console.log("serve and eat")
+        }
+
+        hotwater(function () {                                                             // first hotwater will execute and after 3 second it will call the function addingmaggie and similarly after 3 second addingmasala will be called similarly it will also called serve after 3  seconds.
+            addingmaggie(function () {
+                addingmasala(function () {                                                 // this diagram is called callback hell or pyramid of doom 
+                    serve();
+                })
+            })
+        })
+
+
+    </script>
+
+    <!-- drawbacks of callback function -->
+    <!-- Hard to Maintain Code
+         If the program becomes large, managing many callbacks becomes difficult. -->
+
+    <!-- Error Handling is Difficult
+         Handling errors in callbacks is complicated -->
+
+    <!-- Callback Hell (Nested Code Problem)
+         When many callbacks are placed inside each other, the code becomes deeply nested and messy. -->
+
+    <!-- Inversion of Control
+         When we pass a callback to another function, we lose control over when and how it will be executed. -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallStack and Callback</title>
+</head>
+
+<body>
+    <!-- here we will learn about callstack as well as callback functions -->
+
+    <!-- CallStack -->
+
+    <!-- its basically gives us the information about which function is going to run first  -->
+
+    <!-- or a simple defination is 
+        A data structure that stores function calls and executes them one by one in a LIFO(last in first out) order. -->
+
+    <!-- How does it help js 
+    It helps the JavaScript engine know:
+    which function is running
+    which function should run next
+    where to return after a function finishes -->
+
+    <script>
+        function first() {                                      
+            second();
+        }
+
+        function second() {
+            third();
+        }
+
+        function third() {
+            console.log("Hello");
+        }
+
+        first();
+    </script>
+
+    <!-- Code explaination with CallStack work -->
+
+    <!-- first in line 39 we called first() function , it is going to pushed in a call stack -->
+    <!-- then the first() function calls second(), now second is going to pushed above first in CallStack -->
+    <!-- Again second function calls third(), now third function is at the top of the stack and it executes console.log("Hello") -->
+
+    <!-- diagram of CallStack  
+     third()
+     second()
+     first()
+     
+     third is at the top as it is based on LIFO (last come first out) order -->
+
+    <!-- now as third function executes its code it get removed from the CallStack
+     same way both second and first function also get removed from the CallStack and stack become empty -->
+
+    <!-- why CallStack is importand  
+     1.manage function execution
+     2.coordinate with Event Loop, Web APIs, and Callback Queue for asynchronous JavaScript.-->
+
+
+
+</body>
+
+</html>
