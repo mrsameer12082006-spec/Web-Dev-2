@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in js</title>
+</head>
+
+<body>
+    <!-- Error handling in JavaScript is the process of detecting and managing errors in a program so it does not crash. -->
+
+    <!-- 1. try and catch  -->
+    <!-- the problematic code is wirtten in the try block and and code or statement that run if error is occur is written in catch block  -->
+    <!-- js run the try block code first then if any error occur during run time js run the catch block immediately. -->
+    <!-- example -->
+
+    <script>
+        try {
+            let x = y + 5;   // y is not defined
+        } catch (error) {
+            console.log("Error occurred:", error.message);                             // here error.message is used to get the readable description of an error in JavaScript.
+        }                                                                              // other is error.name gives the name of the error like refernce error, zerodivision error etc
+
+    </script>
+
+
+    <!-- Key Points of try...catch
+    1.Used to handle runtime errors
+    2.Prevents application crash
+    3.catch receives an Error object
+    4.Commonly used with async/await
+    -->
+
+    <!-- 2. In JavaScript, fetch() is used to make HTTP requests (it is part of the Fetch API). Since network requests can fail, we need error handling. -->
+
+    <!-- 1.using .catch() -->
+    <!-- If a network error occurs, .catch() will handle it. -->
+
+    <script>
+        fetch("https://dummyjson.com/quotes")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log("Error:", error);
+            });                                                // if network error occur .catch will handle it
+    </script>
+
+    <!-- 2.Using async / await with try...catch
+    This is the modern and cleaner approach. -->
+
+    <script>
+        async function getData() {
+            try {
+                let response = await fetch("https://dummyjson.com/carts");
+                let data = await response.json();
+
+                console.log(data);
+            }
+            catch (error) {
+                console.log("Error:", error);
+            }
+        }
+
+        getData();
+    </script>
+
+
+
+
+</body>
+
+</html>

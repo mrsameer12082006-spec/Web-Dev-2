@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storages</title>
+</head>
+
+<body>
+    <!-- to view storage go to application then click the storage option -->
+
+    <!-- local storage -->
+
+    <!-- Local Storage is a browser storage mechanism that allows us to store data in the form of key–value pairs.
+        The data stored in Local Storage does not expire and remains available even after the browser is closed or the system is restarted.
+    -->
+
+    <!-- local storage will only take the data in the form of string only -->
+    <!-- it also doesnot delete the data by itself you have to manually remove it -->
+    
+    <!-- size limit 5 to 6 mb -->
+
+    <!-- application
+     1. website theme
+     2. form data -->
+
+    <script>
+        //local storage codes
+
+        localStorage.setItem("Name", "Sameer")                  // here name is key and sameer is its value
+        localStorage.setItem("age", 19)                         // here this 19 which is an integer ge converted into string value by the browser itself
+        localStorage.setItem("DOB", "12-08-2006")               // .setItem is used to put element in the local storage
+
+        let name = localStorage.getItem("Name");             // getItem is used to take the item from the local storage and it take a key value
+        console.log(name)
+
+        localStorage.removeItem("Name")                        // removeItem is used to remove the item from the local storage and it take a key value as an  argument
+
+        localStorage.clear()                                   // clear eveything from the local storage
+
+        let object = {
+            name: "Sameer",
+            age: 19
+        };
+
+        // localStorage only stores strings.
+        // So if you try:
+        // localStorage.setItem("user", obj);
+        // The browser stores:
+        // [object Object]
+        // which is not useful.
+
+        localStorage.setItem("ob",JSON.stringify(object))              // stringify is used to convert your object into string
+
+        let run = localStorage.getItem("ob");
+
+        let data = JSON.parse(run)                                    // json parse is used to convert your string to original data type
+        console.log(data.name)
+        console.log(data.age)
+        
+
+    </script>
+
+    <!-- session storage -->
+
+    <!-- its code is same as of local storage the differece is that its default behaviour where on restarting the page the data will get removed from the storage -->
+
+    <!-- application
+     1. it is used in forms 
+     2.temporary shopping cart -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error handling</title>
+</head>
+
+<body>
+    <!-- important concept -->
+    <!-- fetch() only rejects the promise for network errors, not for HTTP errors like 404 or 500. -->
+
+    <!-- it means fetch will show the .catch only if there is a network error but if the error status is 
+        
+        404 = Page not found
+        500 = Server error
+        
+        they are not network error 
+        The server successfully responded, but the response contains an error status code.
+        So fetch() still considers this a successful request.  -->
+
+    <!-- From the perspective of HTTP (Hypertext Transfer Protocol):
+         Client → Request sent
+         Server → Response received
+         Even if the response says 404, the request was still successfully completed.
+         So fetch() resolves the promise.
+        -->
+
+    <!-- We must manually check:
+        response.ok
+        response.ok is true for status 200–299. -->
+
+    <script>
+        fetch("https://dummyjson.com/carts")
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error("HTTP Error: " + response.status);
+                }
+
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log("Error:", error.message);
+            });
+    </script>
+
+
+</body>
+
+</html>
