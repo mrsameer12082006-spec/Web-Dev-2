@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <!-- WHAT IS API -->
+    <!-- API stands for Application Programming Interface. It is a way for two different software programs to communicate with each other -->
+
+    <!-- example Restaurent waiter analogy  -->
+
+    <!-- in js we have fetch api () -->
+
+    <!-- When we use fetch, data can travel in two directions:
+     ️1.From backend → frontend  : GET Request
+     The frontend (browser or app) sends a GET request to the 
+     backend asking for data.
+ 
+     2️ From frontend → backend  : POST Request
+     The frontend (browser or app) sends data to the backend using a POST request, usually to create or update something on the  -->
+
+
+    <!-- 1 get method  -->
+    <!-- it is used when we want something from the backend -->
+
+    <script>
+        async function getData() {
+            let response = await fetch("https://dummyjson.com/quotes")                            
+            let data = await response.json();
+            // console.log(data);                                     
+            // console.log(data.quotes);                          // using this you will get the quotes from the api only .name the particular thing you want from the api 
+            data.quotes.forEach((item,index) => {
+            // console.log(item.author,index)                        // using for each to console the quotes form the api we will get author name along with index value 
+            console.log(item,index)                                  // console we get quotes author along with index
+          });
+        }
+        getData()
+        
+        //fetch() → sends request to API
+        // API → returns response object
+        // response.json() → converts JSON → JavaScript object
+        // Data stored in data variable
+        // console.log(data) prints it
+
+    </script>
+
+     
+</body>
+</html>

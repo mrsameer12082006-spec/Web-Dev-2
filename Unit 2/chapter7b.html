@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch api</title>
+</head>
+
+<body>
+    <!-- here we will see the othe method which is post  -->
+
+    <!-- The POST method is used when you want to send data to an API (server) instead of just receiving data. -->
+
+    <script>
+        async function sendproduct() {
+            let response = await fetch('https://dummyjson.com/products/add', {                                         // this line is saying that we want to send data to this url and we are using post method to send data
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'                                                                // this line is saying that the data we are sending is in json format and we are converting it to json format using JSON.stringify() method from js object to json format.
+                },
+                body: JSON.stringify({                                                                               
+                    title: 'BMW Pencil',
+                    brand: 'BMW',
+                    description: 'this is BMW Pencil'                                                                 // body contains the data we want to send to the server and we are converting it to json format using JSON.stringify() method from js object to json format.
+
+                })
+            })
+            let data = await response.json();                                                                       // this line is saying that we want to get the response from the server and we are converting it to json format using response.json() method from json format to js object.
+            console.log(data)
+
+        }
+
+        sendproduct()
+
+    </script>
+
+
+
+
+
+    <!-- If my notes helped you learn something, I’m really happy.
+        Thanks for reading!
+     – Sameer Mishra -->
+
+
+
+
+</body>
+
+</html>
