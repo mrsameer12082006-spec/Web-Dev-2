@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+</head>
+
+<body>
+    <!-- if we have a lot of promise-based code and we want to make it wait properly, earlier we had to use callback hell  — which was super messy.
+        Then we got promise chaining .then().then().then() — better, but still a bit hard to read -->
+
+    <!-- now we are learning the modern and clear one which is good for async codes (slow codes)  -->
+
+    <!-- async/await -->
+    <!-- In JavaScript, async and await are used to handle Promises in a simpler and cleaner way.
+        They make asynchronous code look like normal synchronous code. -->
+
+
+
+    <!-- async
+        The async keyword is used before a function.
+        It makes the function always return a Promise. -->
+    <!-- example -->
+
+    <script>
+        async function greet() {
+            return "Hello";
+        }
+
+        let result = greet();                       // it will  result this in console  Promise {<fulfilled>: 'Hello'}  rather then just hello.
+        console.log(result)
+
+        //using .then we will get hello  in console 
+
+        greet().then((message) => {
+            console.log(message);
+        });
+
+
+        // this is what we mean when we say async key word turn function into promises
+    </script>
+
+    <!-- await
+        The await keyword is used inside an async function.
+        It pauses the function until the promise is resolved. -->
+
+    <script>
+        function boilWater() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Water boiled");
+                    resolve();
+                }, 2000);
+            });
+        }
+
+        function addMaggie() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Maggie added");
+                    resolve();
+                }, 2000);
+            });
+        }
+
+        function addMasala() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Masala added");
+                    resolve();
+                }, 2000);
+            });
+        }
+
+        async function cookMaggi() {
+
+            await boilWater();
+            await addMaggie();
+            await addMasala();                                              //  here async will wait till the promise is resolve then run 
+
+            console.log("Serve and eat 🍜");
+        }
+
+        cookMaggi();
+    </script>
+
+
+        <!-- Why Async/Await is Better
+            Compared to callbacks and promise chaining, async/await is:
+            ✅ easier to read           ✅ easier to write            ✅ easier to debug             ✅ avoids callback hell -->
+
+
+</body>
+
+</html>

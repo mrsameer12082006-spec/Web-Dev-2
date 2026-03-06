@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+</head>
+<body>
+    <!-- here we will discuss and see how when the setTimeout,fetch etc  is completed its time period then how it come back for execution and what are the things involve in making sure no mistake occur -->
+
+    <!-- there are total of 4 things that sees how the delay tasks are going to run or execute 
+    1.Web API = they handle time-consuming stuff like setTimeout, fetch or HTTP requests.
+    2.CallStack = the place where all code runs, one line at a time
+    3.Task Queue = where the completed tasks wait in line to be executed
+    4.Event Loop= he manager that decides when a task can go to the Call Stack. -->
+
+    <!-- first step is CallStack -->
+
+    <!-- when ever you write a single js code it straight when to callstack as 
+     CallStack helps js to keep track of things that are going to execute next, it includes functions , scripts everything -->
+
+    <!-- now we move to next step, async code (code that takes time ) 
+     they doesnot directly move to call stack they have to go through some step before execution -->
+
+    <!-- Second Step -->
+    <!-- Web Api = Web Application Programming Interfaces are tools provided by the browser (not JavaScript) that help us perform asynchronous or background tasks —-->
+    <!--example setTimeout, fetch , local  -->
+
+    <!-- when we add setTimeout it send our code to browser at the Web api where it wait for the time completion and once it get completed it doesnot jump straight back to CallStack -->
+
+    <!-- Third step -->
+
+    <!-- once the job of Web Api finishes our code directly went to the task Queue  -->
+
+    <!-- Task Queue is a waiting line for functions that are ready to run after Web API finishes its work, but they have to wait until the Call Stack is empty. -->
+
+    <!-- Task Queue stores asynchronous callbacks (like the function inside setTimeout) -->
+
+    <!-- task Queue create two line of functions 
+     1. higher priority ones known as (Microtask Queue) ,  example : .then() .catch()
+     2. lower priority ones are known as (Macrotask Queue), example : setTimeout() , fetch() -->
+
+
+    <!-- micro ones take place ahead of macro queue ones  -->
+
+    <script>
+        console.log("start")
+
+        setTimeout(() => {
+            console.log("Macrotask is completed")
+        }, 0);
+
+        Promise.resolve().then(()=>{
+            console.log("Microtask is complete")
+        })
+
+        console.log("end")
+    </script>
+
+
+    <!-- fourth step  -->
+
+    <!-- now we have seens the cycle 
+     1 code goes to CallStack
+     2. setTimeout , fetch goes to web api where they wait to finish
+     3. then they sent to Task queue to be in line for execution once the call stack is empty according to there prioprity order 
+     4. final step -->
+
+    <!-- now who will tell the task queue wheather the CallStack is empty or not  -->
+     
+    <!-- this is done by none other then event loop  -->
+    <!-- Event Loop is like a manager or guard who keeps checking if the Call Stack is empty, and if yes, it sends the next task from the Task Queue to the Call Stack-->
+
+
+
+</body>
+</html>
