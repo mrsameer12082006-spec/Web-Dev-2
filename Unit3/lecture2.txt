@@ -1,0 +1,89 @@
+What is Virtual DOM?
+Difference between Virtual DOM and Real DOM?
+Reconcillation
+SPA
+JSX
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+what is virtual DOM?
+
+
+
+What would happen if you remodeled(Rebuild) the entire room for every small change
+it would be time consuming and exhausting 
+
+same way when we change data in the web page we have to update the entire web page which is exhausting thats why 
+React avoids this by using the Virtual DOM.
+
+
+The Virtual DOM (VDOM) is a lightweight copy of the real DOM (Document Object Model) used by React to make UI updates faster and more efficient
+
+React creates a virtual copy of the real DOM in memory.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+How does virtual DOM help in updating the data without reloading the entire page?
+
+When something changes in the UI (e.g., a user clicks “Like”),
+ 
+React: 
+
+1.Updates the Virtual DOM first.
+2.Compares the old Virtual DOM with the new Virtual DOM .
+3.Finds what actually changed.
+4.Then, it updates only that part of the real DOM, not the whole page.
+
+this part of react finding out what has changed in the UI and updating only that part is called Diffing.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between Real DOM and Virtual DOM
+
+| Feature      | Real DOM                            | Virtual DOM                    |
+| ------------ | ----------------------------------- | ------------------------------ |
+| What it is   | Actual webpage structure in browser | Copy of DOM stored in memory   |
+| Speed        | Slower updates                      | Faster updates                 |
+| Update style | Updates entire structure            | Updates only changed parts     |
+| Used by      | Traditional JavaScript              | React                          |
+| Performance  | Less efficient for frequent changes | Optimized for frequent changes |
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Reconcillation
+
+1.When the state of your application changes, React creates a new Virtual DOM tree.
+
+2.React then compares this new Virtual DOM with the previous Virtual DOM.
+
+3.React determines the minimum number of changes required to update the Real DOM so it matches the new Virtual DOM.
+
+4.Finally, React efficiently updates only the changed parts of the Real DOM, often batching multiple updates together to improve performance.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+SPA
+SPA (Single Page Application) is a type of web application that loads only one HTML page and updates content dynamically without reloading the whole page.
+
+only one HTML page = means it load the index.html only one time in the browser after that js automatically update the a page with react.
+
+Example
+Gmail,Instagram,etc
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+JSX
+JSX stands for JavaScript XML. It's a syntax extension for JavaScript.
+
+JSX (JavaScript XML) lets you write HTML-like code inside JavaScript — used in React to describe what the UI should look like.
+
+Its experssion 
+Expressions in JSX are snippets of JavaScript that you can embed inside curly braces {} to make your UI dynamic.
+
+
+You can use:
+Variables: {name}
+Math: {2 + 2}
+Functions: {getUserName()}
+Conditionals (ternary): {isLoggedIn ? "Logout" : "Login"}

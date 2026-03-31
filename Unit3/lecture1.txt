@@ -1,0 +1,146 @@
+What is React?
+
+React is a JavaScript library used to build user interfaces (UI) the visual part of websites and apps that users interact with.
+It helps developers create modern, fast, and interactive web applications in a structured way.
+
+Created by Meta (Facebook).
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bonus Knowledge
+
+Difference between library and Framework?
+
+Library
+
+A library is a collection of functions you can use in your code.
+
+You are in control.
+
+You decide:
+
+when to call it
+where to use it
+how to use it
+
+
+Example
+
+React is a library.
+You import React and use it wherever needed.
+
+Example:
+import React from "react";
+
+You control the structure of your app.
+
+
+Framework
+A framework provides a complete structure for building an application.
+
+The framework controls flow and tells you:
+
+where to write code
+how to structure project
+how components interact
+Example frameworks
+Angular
+Django
+Spring
+
+They provide rules and architecture.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Why do we need react in the first place?
+
+Beacause it makes building modern websites (especially interactive ones) much easier, faster, and more organized compared to plain HTML + CSS + JavaScript.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How does it do that?
+
+when we use normal js for creating ui we have to select every element manually as well as updating them  which is fine when the project or website is small but what if it become large then doing 
+this 
+document.getElementById("title").innerText = "New Title";
+document.getElementById("price").innerText = "₹500";
+document.getElementById("status").innerText = "Available";
+
+for 100 times become very hectic and time consuming so react  solve all these problems. 
+
+this part  of selecting everything and changing everything manually is called Imperative Programming.
+
+
+Problem react solve
+1.Component-Based Structure
+
+React lets you divide UI into small reusable pieces called components.
+
+Example:
+Navbar component
+Product card component
+Button component
+Form component
+
+Reuse anywhere → saves time.
+
+
+2.React automatically updates UI when data changes.
+
+Example:
+const [count, setCount] = useState(0);
+
+When count changes → UI updates automatically
+Without React → manually update DOM. Which would reload the page every time you change the data
+
+
+3.React organizes code in a structured way.
+
+Instead of mixing HTML + JS separately, React combines them logically:
+
+function Welcome() {
+  return <h1>Hello Sameer</h1>;
+}
+
+Easy to read & maintain.
+react does it using JSX.
+
+
+4.Fast Performance (Virtual DOM)
+
+React uses Virtual DOM, meaning:
+It updates only the parts of the page that change, not the whole page.
+
+Result:
+
+Faster websites
+Smooth user experience
+
+
+5.React is widely used, so many tools support it:
+
+Next.js → full websites
+React Native → mobile apps
+Redux/Zustand → state management
+Material UI → ready components
+
+Companies using React:
+
+Facebook
+Instagram
+Netflix
+Airbnb
+Uber
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+when You describe the desired result, not the steps.
+
+EXAMPLE
+You just say:
+👉 UI should show “Hello Sameer”
+
+React decides how to update DOM.
+
+it is called Declarative Programming.
