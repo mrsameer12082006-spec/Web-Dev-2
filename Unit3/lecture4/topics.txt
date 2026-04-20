@@ -1,0 +1,4 @@
+Topics to be covered?
+1. one way binding 
+2. React conmponents (class and function)
+3. 

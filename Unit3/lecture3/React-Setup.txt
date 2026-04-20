@@ -1,0 +1,72 @@
+What is Vite?
+
+Vite (pronounced “veet”, French word for fast) is a modern frontend build tool used to create fast web apps — especially with React, Vue, Svelte, and Vanilla JavaScript.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Why Vite is fast?
+
+Answer - Traditional tools (like Webpack)
+
+        1.Bundle entire project before starting
+        2.Slow when project grows
+
+
+        Vite approach
+
+        1.Uses native ES modules                       (ES module is a way of splitting JavaScript code into multiple files and connectin together using import and export keywords.)
+        2.Loads only the files needed
+        3.Instant server start
+        4.Instant updates when you edit code (Hot Reload)
+
+
+Example workflow
+Without Vite
+
+You change code → wait → browser refresh → slow
+
+With Vite
+
+You change code → browser updates instantly 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Creating First React App with Vite?
+
+1. Make sure the node.js is installed 
+
+2.in your terminal run npm create vite@latest your folder name
+
+3. Select the framework as well language according to your prefernce 
+
+4. after that right click on your folder name and select open in integrated terminal 
+
+5. and run npm run dev if the live server is stopped.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Folder Structure 
+
+my-react-app/
+│
+├── node_modules         #Automatically created when you run npm install. Contains all the dependencies (packages/libraries) used in your app.
+│
+├── public/              # Contains static assets like images, icons, or fonts that won’t change during build.
+|
+│   └── vite.svg         # Example SVG logo used in the starter project.
+│
+├── src/                 # your main code ⭐
+|
+|
+│   ├── App.css          # Styles specific to the App component.
+│   ├── App.jsx          # Main React component — your app’s UI starts from here.
+│   ├── index.css        # Global styles that apply to the whole app
+│   └── main.jsx         # The entry point of the app. It renders <App /> into the HTML page using ReactDOM.createRoot.
+│
+├── .gitignore           # tells git which files to ignore ex node_modules , .env , venv 
+├── index.html           # main HTML file
+├── package.json         # project info + dependencies
+├── vite.config.js       # Configuration file for Vite. You can customize build behavior, define aliases, use plugins, etc.
+└── README.md            # project description
+
+you can check all these files in my-react-app folder
