@@ -1,0 +1,27 @@
+topics we will cover
+States (advantages) , (counter using state in class component) (example is in my-app)
+props
+
+-----------------------------------------------------------------------------------------------------------
+here we will see states in class component only for function component we will study that in unit 4 
+
+States 
+States in react is a built in object which is used to store mutable data that can change automatically.
+
+what happend when we update states
+1. React re-renders the component.
+2. UI updates automatically.
+
+why do we need it?
+
+1.To store changing data in a component.
+2.To respond to user actions (like clicks or typing).
+3.To update the UI automatically when data changes.
+4.Makes the app dynamic and interactive.
+
+------------------------------------------------------------------------------------------------------------
+
+props
+it is the process of passing data from parent to child component in read only format 
+
+example of props we have saw that in one way binding it is same

@@ -1,0 +1,18 @@
+topics to be covered?
+1.conditional rendering(example in my-app)
+-----------------------------------------------------------------------------------------------------
+conditional render refer to the process of displlaying different ui based on different condition 
+
+as if condtion A is true show this ui 
+if condition B is ture show this ui
+
+conditional rendering is applied using if/else in react or a operator which is called Ternary operator
+
+------------------------------------------------------------------------------------------------------
+
+Ternary operator
+it is basically a shorter way to write if/else in react with it syntax as 
+
+(condtion ? truevalue : falsevalue)
+
+------------------------------------------------------------------------------------------------------
