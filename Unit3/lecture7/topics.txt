@@ -1,0 +1,84 @@
+what we will cover 
+
+1.lifecycle method in class component
+2. phases of life cycle method
+3. drawbacks of life cycle method 
+
+----------------------------------------------------------------------------------------------------
+
+what is lifecycle method?
+
+life cycle method are fucntion that run at different phase or stages of a component's life.
+
+they are mainly used in class component but we can use them in function component using useEffect hook.
+
+------------------------------------------------------------------------------------------------------------------------
+A component basically have 3 phases in its life .
+1. Mounting = When the component is created and added to the DOM.
+2. Updating = occur when we change state or props means update the ui
+3. Unmounting = When component is removed from the DOM.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+1. Mounting
+it occur when an component is created and added into the DOM
+
+it basically has three parts 
+
+| Method                | Purpose                                |
+| --------------------- | -------------------------------------- |
+| `constructor()`       | Initializes state                      |
+| `render()`            | return jsx                             |
+| `componentDidMount()` | Runs after component appears on screen |
+
+see its example in my-app folder.
+
+component did mount run only one time when the component is displayed.
+after on updating the  state we basically run the updatng phase
+
+-------------------------------------------------------------------------------------------------------------------------
+
+2. Updating
+it occur or run when we change state or props 
+
+it basically has two main part 
+1. componentDidUpdate() → runs after every update
+2. shouldcomponentupdate() → it is used to control wheather a component should re render or not after state or props change 
+
+it basically used to prevent unnesseary re-rendering
+
+how does it run 
+1. on moutning only render runs and nothing else  
+2. after updating first we check shouldommponentupdate if true then we run render first then component did update second 
+3. but if should compoent update become false nothing run except it 
+
+example in my-app2
+
+----------------------------------------------------------------------------------------------------------------------------
+3. unmounting 
+it  occur when an component is removed from the DOM. 
+it is also the final phase of a compoent's life 
+
+it has only one main part 
+1. componentWillUnmount()= Runs before component is removed
+
+
+why do we use unmounting?
+it is mainly use for clean up task like 
+Clearing timers
+Removing event listeners
+Cancelling API requests
+Cleaning subscriptions
+
+for example of this do check my-app3
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+drawbacks of life cycle methods
+1. complex syntax
+2. use of this keyword
+3.more boilerplate coding 
+4.get replaced by hooks 
+5. hard to reuse logic
+
+----------------------------------------------------------------------------------------------------------------------------
