@@ -1,4 +1,81 @@
 Topics to be covered?
-1. one way binding 
-2. React conmponents (class and function)
-3. 
+1. one way binding  (example in my-app folder)
+2. React conmponents (class and function) (example in my-app2)
+3. Normal and defualt export (example in my-app3)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+one way binding
+It is data flow pattern in react where data is flow from parent component to child component using props and child conmponent cannot modify that data.
+
+example can be seen in my-app folder here
+1. we have declared the value in app.jsx. 
+2. then we have passed it to children file in component and caught it using  props {props.username}
+3. then we have to import it in app.jsx once again to display it.
+
+
+difference between one way binding and props?
+one way binding is a mechanism that say in react only flow in one direction from parent  to child
+
+props
+it is tool that obey this mechanism or rule of one way binding.
+
+Advantages of one way binding 
+1. Easier debugging 
+2.Better control 
+3.Easier scalability 
+4. predictible data flow
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+React component
+
+in unit 3 lecture we learned that react uses a component based architecture 
+
+two component are used
+1. Function component 
+2. Class component
+
+here we will mainly study class component
+
+class component
+A Class Component in React is a component written using an ES6 class. (it is used in older react version)
+
+it help us in using these features easily
+1. states - you can use states in class component very easily 
+
+this.state = it is use to store data 
+this.setstate() = it is use to update data
+
+2. Lifecycle Method = we will study it in detail in upcoming lecture
+
+3. render () = it is must class component part as it return as jsx.
+
+
+Difference between Class component v/s Function component?
+
+| Feature           | Functional Component         | Class Component        |
+| ----------------- | ---------------------------- | ---------------------- |
+| Definition        | Simple JavaScript function   | JavaScript class       |
+| Syntax            | Easier and shorter           | More complex           |
+| `this` keyword    | Not used                     | Used                   |
+| State Handling    | Uses Hooks (`useState`)      | Uses `this.state`      |
+| Lifecycle Methods | Uses Hooks (`useEffect`)     | Uses lifecycle methods |
+| Performance       | Slightly simpler/lightweight | Slightly heavier       |
+| Modern Usage      | Preferred in modern React    | Older approach         |
+| Readability       | Cleaner                      | More boilerplate code  |
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Default and Normal Export
+
+Default Export
+
+ In defualt export per file you can only export only one main thing (like function , class etc) 
+
+ and you can import it with any name without using curly braces {} for better clarification see example in my-app3
+
+Named Export 
+
+in this you can export multiple main thing from one file 
+but the condition is you have to use the same name while importing and use {} curly braces see navbar file in component folder in my-app3
+
+-----------------------------------------------------------------------------------------------------------------------------------------
